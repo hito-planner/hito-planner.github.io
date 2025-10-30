@@ -381,7 +381,7 @@
       <div class="game-card">
         <h3>Discord</h3>
         <p>A popular communication platform for communities and friends to chat via text, voice, and video.</p>
-        <button class="play-btn" data-url="https://canary.discord.com">Open</button>
+        <button class="play-btn" data-url="https://discord.com">Open</button>
       </div>
       
       <div class="game-card">
@@ -445,6 +445,11 @@ document.addEventListener('DOMContentLoaded', () => {
   --------------------------------*/
   document.querySelectorAll('.play-btn').forEach(btn => {
     btn.addEventListener('click', () => {
+      const url = btn.dataset.url;
+      if (url.includes("discord.com")) {
+        window.open("https://canary.discord.com", "_blank");
+        return;
+      }
       const iframe = document.createElement('iframe');
       iframe.className = 'fullscreen-iframe';
       iframe.src = btn.dataset.url;
