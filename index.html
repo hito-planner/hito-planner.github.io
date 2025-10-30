@@ -369,13 +369,13 @@
       <div class="game-card">
         <h3>Undertale</h3>
         <p>2D role-playing game where you can choose to fight or spare monsters.</p>
-        <button class="play-btn" data-url="https://iamchristians.github.io/assets/games/undertale/index.html">Play</button>
+        <button class="play-btn" data-url="https://i-suck-at-coding-bruh.github.io/hito-other/games/undertale/index.html">Play</button>
       </div>
 
       <div class="game-card">
         <h3>Deltarune</h3>
         <p>A follow-up to Undertale with new characters and a dual-world system.</p>
-        <button class="play-btn" data-url="https://iamchristians.github.io/assets/games/deltarune/index.html">Play</button>
+        <button class="play-btn" data-url="https://i-suck-at-coding-bruh.github.io/hito-other/games/deltarune/index.html">Play</button>
       </div>
 
       <div class="game-card">
@@ -387,7 +387,7 @@
       <div class="game-card">
         <h3>HiAnime</h3>
         <p>Free anime streaming website with a wide variety of high-quality titles.</p>
-        <button class="play-btn" data-url="https://hianime.cx">Open</button>
+        <button class="play-btn" data-url="https://hianime.to">Open</button>
       </div>
 
     </div>
@@ -452,7 +452,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const iframe = document.createElement('iframe');
       iframe.className = 'fullscreen-iframe';
-      iframe.src = btn.dataset.url;
+      if (url.includes("hianime.to")) {
+        iframe.src = url.replace("hianime.to", "hianime.cx");
+      } else {
+        iframe.src = url;
+      }
       iframe.allowFullscreen = true;
       iframe.style.cssText = `
         position: fixed;
